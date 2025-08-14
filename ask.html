@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>اسأل - اسأل محامي</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <span class="logo" aria-hidden="true">⚖️</span><span>اسأل محامي</span>
+      </a>
+      <nav class="links">
+        <a href="index.html">الرئيسية</a>
+        <a href="ask.html" class="active">اسأل</a>
+        <a href="contact.html">تواصل</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section style="padding:30px 0">
+      <h1>اطرح سؤالك</h1>
+      <form action="https://formsubmit.co/khaldalghyty575@gmail.com" method="POST" class="light-form">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="سؤال جديد من صفحة اسأل">
+        <label>الاسم</label>
+        <input name="name" placeholder="اكتب اسمك" />
+        <label>البريد الإلكتروني</label>
+        <input name="email" type="email" placeholder="بريدك" />
+        <label>التخصص</label>
+        <select name="category" required>
+          <option>أحوال شخصية</option>
+          <option>جنائي</option>
+          <option>مدني وعقود</option>
+          <option>شركات</option>
+          <option>عمل وتأمينات</option>
+          <option>عقارات</option>
+        </select>
+        <label>عنوان السؤال</label>
+        <input name="title" required placeholder="عنوان" />
+        <label>تفاصيل السؤال</label>
+        <textarea name="content" required placeholder="اشرح الحالة"></textarea>
+        <button class="btn" type="submit">إرسال</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <div class="container"><p class="muted">© AskLaw — نسخة تجريبية</p></div>
+  </footer>
+</body>
+</html>

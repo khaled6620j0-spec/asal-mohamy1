@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>اسأل محامي — نسخة جاهزة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" data-link>
+        <span class="logo" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3l-3 6h6l-3-6zm-7 9c0 2.761 2.239 5 5 5s5-2.239 5-5H5zm9 0c0 2.761 2.239 5 5 5s5-2.239 5-5h-10zM11 14v7h2v-7h-2z" fill="white"/>
+          </svg>
+        </span>
+        <span>اسأل محامي</span>
+      </a>
+      <nav class="links">
+        <a href="#home" data-link>الرئيسية</a>
+        <a href="#ask" data-link>اسأل سؤال</a>
+        <a href="#questions" data-link>الأسئلة</a>
+        <a href="#lawyers" data-link>تسجيل محامي</a>
+        <a href="#articles" data-link>مقالات</a>
+        <a href="#contact" data-link>تواصل</a>
+      </nav>
+      <div class="cta">
+        <a class="btn secondary" href="#login" data-link>دخول</a>
+        <a class="btn" href="#ask" data-link>اسأل الآن</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container">
+    <!-- HOME -->
+    <section id="home" class="active">
+      <div class="hero">
+        <div>
+          <div class="chip">استشارات قانونية مبسطة وسريعة</div>
+          <h1 class="headline">اطرح سؤالك القانوني، واحصل على إجابة من محامين مُعتمدين</h1>
+          <p class="sub">منصة عربية تربطك بمحامين متخصصين في الجنائي، الأحوال الشخصية، العقود، الشركات، والعمل… وغيرهم. كل ذلك في مكان واحد.</p>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn" href="#ask" data-link>ابدأ بسؤال مجاني</a>
+            <a class="btn secondary" href="#questions" data-link>تصفح الأسئلة</a>
+          </div>
+          <div class="grid" style="margin-top:24px">
+            <div class="card">
+              <div class="badge">موثَّق للمحامين</div>
+              <h3>توثيق المحامين</h3>
+              <p class="muted">نطلب بطاقة القيد النقابي/الترخيص قبل السماح بالإجابة.</p>
+            </div>
+            <div class="card">
+              <div class="badge">ردود في غضون ساعات</div>
+              <h3>أولوية وعاجل</h3>
+              <p class="muted">اختر استشارة عاجلة مدفوعة لتحصل على أولوية الرد.</p>
+            </div>
+            <div class="card">
+              <div class="badge">خصوصية</div>
+              <h3>بياناتك بأمان</h3>
+              <p class="muted">نحذف أي بيانات حساسة من العرض العام، ويمكنك الإرسال كـ"مجهول".</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3 style="margin:6px 0 12px">سؤال سريع</h3>
+          <!-- Quick ask uses local storage + optional email via FormSubmit -->
+          <form id="quickAskForm">
+            <label>الموضوع</label>
+            <select name="category" required>
+              <option value="أحوال شخصية">أحوال شخصية</option>
+              <option value="جنائي">جنائي</option>
+              <option value="مدني وعقود">مدني وعقود</option>
+              <option value="شركات">شركات</option>
+              <option value="عمل وتأمينات">عمل وتأمينات</option>
+              <option value="عقارات">عقارات</option>
+            </select>
+            <label>سؤالك</label>
+            <textarea name="content" placeholder="اكتب سؤالك بإيجاز…" required></textarea>
+            <div style="display:flex; gap:8px; margin-top:8px">
+              <button class="btn" type="submit">إرسال</button>
+            </div>
+          </form>
+          <p class="muted" style="margin-top:10px">بالإرسال، توافق على الشروط والاستخدام لأغراض تعليمية في النسخة التجريبية.</p>
+        </div>
+      </div>
+
+      <div class="grid" style="margin-top:10px">
+        <div class="card">
+          <h3>كيف يعمل؟</h3>
+          <ol class="muted" style="line-height:1.9">
+            <li>اكتب سؤالك وحدد التخصص.</li>
+            <li>نخطرك عندما يرد محامٍ موثَّق.</li>
+            <li>قيّم الإجابة واطلب استشارة خاصة إذا احتجت.</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>التخصصات الشائعة</h3>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:8px">
+            <span class="pill">أحوال شخصية</span>
+            <span class="pill">جنائي</span>
+            <span class="pill">مدني</span>
+            <span class="pill">شركات</span>
+            <span class="pill">عمل</span>
+            <span class="pill">عقارات</span>
+            <span class="pill">أحكام قضائية</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>أسعار مبدئية</h3>
+          <ul class="muted" style="line-height:1.9">
+            <li>سؤال عام: مجاني</li>
+            <li>استشارة عاجلة: ابتداءً من 99 ج.م</li>
+            <li>مكالمة خاصة 15 دقيقة: ابتداءً من 199 ج.م</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- other sections (ask, questions, lawyers, articles, contact, login) -->
+    <section id="ask">
+      <div class="section-head">
+        <h2>اسأل سؤال</h2>
+        <span class="badge">نسخة تجريبية — محليًا بدون خادم</span>
+      </div>
+      <form id="askForm" action="https://formsubmit.co/khaldalghyty575@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="سؤال جديد من موقع اسأل محامي">
+        <div class="row">
+          <div>
+            <label>الاسم (اختياري)</label>
+            <input name="name" placeholder="اكتب اسمك أو اتركه فارغًا" />
+          </div>
+          <div>
+            <label>البريد الإلكتروني (اختياري)</label>
+            <input name="email" type="email" placeholder="example@email.com" />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label>التخصص</label>
+            <select name="category" required>
+              <option value="أحوال شخصية">أحوال شخصية</option>
+              <option value="جنائي">جنائي</option>
+              <option value="مدني وعقود">مدني وعقود</option>
+              <option value="شركات">شركات</option>
+              <option value="عمل وتأمينات">عمل وتأمينات</option>
+              <option value="عقارات">عقارات</option>
+            </select>
+          </div>
+          <div>
+            <label>درجة الأهمية</label>
+            <select name="priority">
+              <option value="عادي">عادي</option>
+              <option value="عاجل">عاجل</option>
+            </select>
+          </div>
+        </div>
+        <label>عنوان السؤال</label>
+        <input name="title" required placeholder="مثال: حكم نفقة متجمدة على الزوج؟" />
+        <label>تفاصيل السؤال</label>
+        <textarea name="content" required placeholder="اشرح تفاصيل حالتك بدون بيانات شخصية حساسة…"></textarea>
+        <button class="btn" type="submit">نشر السؤال (إرسال إلى الذاكرة + إيميل)</button>
+      </form>
+    </section>
+
+    <section id="questions">
+      <div class="section-head">
+        <h2>الأسئلة العامة</h2>
+        <div style="display:flex; gap:8px; flex-wrap:wrap">
+          <select id="filterCat">
+            <option value="">كل التخصصات</option>
+            <option>أحوال شخصية</option>
+            <option>جنائي</option>
+            <option>مدني وعقود</option>
+            <option>شركات</option>
+            <option>عمل وتأمينات</option>
+            <option>عقارات</option>
+          </select>
+          <input id="searchBox" placeholder="ابحث في العناوين…" />
+        </div>
+      </div>
+      <div id="questionsList" class="list"></div>
+    </section>
+
+    <section id="lawyers">
+      <div class="section-head">
+        <h2>تسجيل المحامين</h2>
+        <span class="badge">مطلوب توثيق قبل الرد على الأسئلة</span>
+      </div>
+      <form id="lawyerForm" action="https://formsubmit.co/khaldalghyty575@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="طلب توثيق محامي - اسأل محامي">
+        <div class="row">
+          <div>
+            <label>الاسم الثلاثي</label>
+            <input name="name" required placeholder="مثال: أحمد علي محمد" />
+          </div>
+          <div>
+            <label>البريد الإلكتروني</label>
+            <input name="email" required type="email" placeholder="lawyer@example.com" />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label>التخصص</label>
+            <select name="category" required>
+              <option>أحوال شخصية</option>
+              <option>جنائي</option>
+              <option>مدني وعقود</option>
+              <option>شركات</option>
+              <option>عمل وتأمينات</option>
+              <option>عقارات</option>
+            </select>
+          </div>
+          <div>
+            <label>سنوات الخبرة</label>
+            <input type="number" min="0" max="60" name="experience" required placeholder="مثال: 7" />
+          </div>
+        </div>
+        <label>نبذة مختصرة</label>
+        <textarea name="bio" placeholder="اكتب نبذة مختصرة عن خبراتك ومحاكمك المفضلة للعمل…"></textarea>
+        <button class="btn" type="submit">إرسال طلب التوثيق</button>
+      </form>
+      <div style="margin-top:18px">
+        <h3>طلبات قيد الانتظار</h3>
+        <div id="lawyersList" class="list"></div>
+      </div>
+    </section>
+
+    <section id="articles">
+      <div class="section-head">
+        <h2>مقالات قانونية مبسطة</h2>
+        <span class="badge">مواد توعوية — ليست بديلاً عن استشارة</span>
+      </div>
+      <div class="grid" id="articlesGrid"></div>
+    </section>
+
+    <section id="contact">
+      <div class="section-head"><h2>تواصل معنا</h2></div>
+      <form id="contactForm" action="https://formsubmit.co/khaldalghyty575@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="رسالة من نموذج تواصل - اسأل محامي">
+        <div class="row">
+          <input name="name" placeholder="اسمك" required>
+          <input name="email" type="email" placeholder="بريدك" required>
+        </div>
+        <textarea name="msg" placeholder="كيف نقدر نساعدك؟" required></textarea>
+        <button class="btn" type="submit">إرسال</button>
+      </form>
+      <p class="muted" style="margin-top:10px">سنرد عليك عبر البريد في أقرب وقت.</p>
+    </section>
+
+    <section id="login">
+      <div class="section-head"><h2>تسجيل الدخول</h2></div>
+      <div class="card">
+        <p class="muted">هذه نسخة تجريبية بدون خادم. يمكنك إضافة مصادقة لاحقًا (JWT/Passport, OAuth, أو بريد لمرة واحدة).</p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container" style="padding:0">
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px">
+          <span class="muted">© <span id="year"></span> — اسأل محامي. كل الحقوق محفوظة.</span>
+          <div style="display:flex; gap:10px; align-items:center">
+            <a class="pill" href="#">الشروط</a>
+            <a class="pill" href="#">الخصوصية</a>
+            <a class="pill" href="#contact">الدعم</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
