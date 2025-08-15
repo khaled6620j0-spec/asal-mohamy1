@@ -5,13 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>إنشاء حساب - اسأل محامي</title>
 <style>
-body { font-family: Arial; background:#e8f5e9; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; }
+body { font-family: Arial; background:#f0f0f0; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; }
 .box { background:white; padding:30px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,.1); width:300px; text-align:center; }
 h2 { color:#2e7d32; }
 input { width:100%; padding:10px; margin:10px 0; border-radius:5px; border:1px solid #ccc; }
 button { width:100%; padding:10px; background:#2e7d32; color:white; border:none; border-radius:5px; cursor:pointer; }
 button:hover { background:#1b5e20; }
 .error { color:red; font-size:14px; }
+.success { color:green; font-size:14px; }
+a { color:#2e7d32; text-decoration:none; }
+a:hover { text-decoration:underline; }
 </style>
 </head>
 <body>
@@ -19,40 +22,24 @@ button:hover { background:#1b5e20; }
 <div class="box">
   <h2>إنشاء حساب جديد</h2>
   <input type="text" id="username" placeholder="اسم المستخدم">
-  <input type="email" id="email" placeholder="البريد الإلكتروني">
   <input type="password" id="password" placeholder="كلمة المرور">
+  <input type="password" id="confirm" placeholder="تأكيد كلمة المرور">
   <div class="error" id="error-message"></div>
-  <button onclick="signup()">إنشاء الحساب</button>
+  <div class="success" id="success-message"></div>
+  <button onclick="signup()">تسجيل</button>
+  <p>لديك حساب بالفعل؟ <a href="login.html">تسجيل الدخول</a></p>
 </div>
 
 <script>
 function signup() {
   var user = document.getElementById("username").value.trim();
-  var email = document.getElementById("email").value.trim();
   var pass = document.getElementById("password").value.trim();
+  var confirmPass = document.getElementById("confirm").value.trim();
   var errorMsg = document.getElementById("error-message");
+  var successMsg = document.getElementById("success-message");
 
-  if(!user || !email || !pass){
-    errorMsg.textContent = "الرجاء ملء كل الحقول";
-    return;
-  }
+  errorMsg.textContent = "";
+  successMsg.textContent = "";
 
-  // جلب المستخدمين من localStorage
-  var users = JSON.parse(localStorage.getItem("asklaw-users") || "[]");
-
-  // التحقق إذا اسم المستخدم أو البريد موجود
-  if(users.some(u=>u.username===user || u.email===email)){
-    errorMsg.textContent = "اسم المستخدم أو البريد موجود بالفعل";
-    return;
-  }
-
-  users.push({username:user, email:email, password:pass});
-  localStorage.setItem("asklaw-users", JSON.stringify(users));
-
-  alert("تم إنشاء الحساب بنجاح! الآن يمكنك تسجيل الدخول.");
-  window.location.href = "login.html";
-}
-</script>
-
-</body>
-</html>
+  if(user === "" || pass === "" || confirmPass === ""){
+    errorMsg.textContent = "الرجاء ملء جميع الحقو
